@@ -8,4 +8,7 @@
     <string name="bemvindo"> Bem Vindo(a)</string>
     <string name="porcentagem">25%</string>
     <string name="horarios">Horários</string>
+    <string name="qt_aulas">Quantidade de aulas</string>
+    <string name="porcentagem_faltas">Porcentagem de faltas</string>
+    <string name="nome_da_materia">Nome da materia</string>
 </resources>

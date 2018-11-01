@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.gabriela.dispositivosmoveisacch.controller.BancoController;
 
 public class QuantidadeFaltaRestantes extends AppCompatActivity {
 
@@ -21,11 +24,14 @@ public class QuantidadeFaltaRestantes extends AppCompatActivity {
     }
 
     public void onClickCalcular(View view) {
+        BancoController crud = new BancoController(getBaseContext());
         TextView qtFaltas = findViewById(R.id.qtFaltas);
         TextView qtAulas = findViewById(R.id.qtAulas);
         TextView porcFaltas = findViewById(R.id.porcFaltas);
         TextView qtTotalRestante = findViewById(R.id.total);
+        TextView nomeMateria = findViewById(R.id.nomeMateria);
 
+        String nome = nomeMateria.getText().toString();
         int faltas = Integer.parseInt(qtFaltas.getText().toString());
         double aulas = Integer.parseInt(qtAulas.getText().toString());
         double porcentagem = Integer.parseInt(porcFaltas.getText().toString().replace("%", ""));
@@ -41,6 +47,9 @@ public class QuantidadeFaltaRestantes extends AppCompatActivity {
             qtTotalRestante.setText( " Tarde de mais camarada, talvez no próximo semestre ):" );
         }
 
+        String banco = crud.insereDado(nome, Double.toString(aulas), Double.toString(resultado) );
+
+        Toast.makeText(getApplicationContext(), banco, Toast.LENGTH_LONG).show();
 
     }
 }

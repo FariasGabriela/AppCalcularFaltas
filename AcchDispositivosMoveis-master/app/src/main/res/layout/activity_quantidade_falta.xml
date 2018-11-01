@@ -9,8 +9,21 @@
     tools:context=".QuantidadeFalta">
 
     <TextView
-        android:layout_marginTop="60dp"
-        android:text="Quantidade de aulas"
+        android:layout_marginTop="40dp"
+        android:text="@string/nome_da_materia"
+        android:layout_width="350dp"
+        android:inputType="number"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/nomeMateria"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="@string/qt_aulas"
         android:layout_gravity="center_vertical|center_horizontal"
         android:layout_width="350dp"
         android:layout_height="wrap_content" />
@@ -23,7 +36,7 @@
         android:layout_height="50dp" />
 
     <TextView
-        android:text="Porcentagem de faltas"
+        android:text="@string/porcentagem_faltas"
         android:layout_width="350dp"
         android:inputType="number"
         android:layout_gravity="center_vertical|center_horizontal"
@@ -38,12 +51,13 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:text=""
         android:id="@+id/resultado"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center_vertical|center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="50dp"
+        android:text=""
+        android:textSize="24sp" />
 
     <Button
         android:text="Calcular"

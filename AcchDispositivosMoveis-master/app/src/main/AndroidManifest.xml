@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".MateriasActivity" />
         <activity android:name=".QuantidadeFalta" />
-        <activity android:name=".QuantidadeFaltaRestantes"></activity>
+        <activity android:name=".QuantidadeFaltaRestantes" />
+        <activity android:name=".HistoricoActivity"></activity>
     </application>
 
 </manifest>

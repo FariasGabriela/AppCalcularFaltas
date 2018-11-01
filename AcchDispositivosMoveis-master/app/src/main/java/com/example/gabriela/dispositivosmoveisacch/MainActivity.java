@@ -29,4 +29,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MateriasActivity.class);
         startActivity(intent);
     }
+
+    public void onClickHistorico(View view) {
+        Intent intent = new Intent(MainActivity.this, HistoricoActivity.class);
+        startActivity(intent);
+    }
 }
