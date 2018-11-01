@@ -9,23 +9,10 @@
     tools:context=".QuantidadeFaltaRestantes">
 
     <TextView
-        android:layout_marginTop="40dp"
-        android:text="@string/nome_da_materia"
-        android:layout_width="340dp"
-        android:inputType="number"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/nomeMateria"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content" />
-
-    <TextView
         android:layout_gravity="center_vertical|center_horizontal"
         android:text="Quantidade de aulas"
         android:layout_width="340dp"
+        android:layout_marginTop="40dp"
         android:layout_height="wrap_content" />
 
     <EditText
