@@ -11,4 +11,5 @@
     <string name="qt_aulas">Quantidade de aulas</string>
     <string name="porcentagem_faltas">Porcentagem de faltas</string>
     <string name="nome_da_materia">Nome da materia</string>
+    <string name="erropreco">Campo Obrigatório</string>
 </resources>

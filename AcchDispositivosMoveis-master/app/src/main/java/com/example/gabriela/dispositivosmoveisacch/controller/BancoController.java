@@ -37,7 +37,7 @@ public class BancoController {
 
     public Cursor carregaDados(){
         Cursor cursor;
-        String[] campos =  {banco.MATERIA,banco.RESULTADO};
+        String[] campos =  {banco.ID, banco.MATERIA,banco.RESULTADO};
         db = banco.getReadableDatabase();
         cursor = db.query(banco.TABELA, campos, null, null, null, null, null, null);
 

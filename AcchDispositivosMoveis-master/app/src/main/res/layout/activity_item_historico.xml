@@ -10,7 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
+        android:textSize="30sp"
         android:layout_marginTop="10dp"
+        android:includeFontPadding="true"
         android:text="Materia" />
 
     <TextView
@@ -18,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
+        android:textSize="18sp"
         android:layout_marginTop="5dp"
         android:text="Quantidade Faltas" />
 

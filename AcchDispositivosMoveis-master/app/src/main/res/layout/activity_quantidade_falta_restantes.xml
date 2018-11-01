@@ -66,10 +66,11 @@
         android:text=""
         android:id="@+id/total"
         android:textSize="24sp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"  />
+        android:layout_width="340dp"
+        android:layout_height="60dp"  />
 
     <Button
         android:text="Calcular"

@@ -34,13 +34,19 @@ public class QuantidadeFalta extends AppCompatActivity {
         TextView valorResultado = findViewById(R.id.resultado);
         TextView nomeMateria = findViewById(R.id.nomeMateria);
 
-        String nome = nomeMateria.getText().toString();
-        double aulas = Integer.parseInt(qtAulas.getText().toString());
-        double porcentagem = Integer.parseInt(porcFaltas.getText().toString().replace("%", ""));
-
-        if ( aulas == 0 ){
+        if ( nomeMateria.getText().toString().isEmpty() ) {
+            nomeMateria.requestFocus();
+            nomeMateria.setError(getString(R.string.erropreco));
+        } else if ( qtAulas.getText().toString().isEmpty() ) {
             qtAulas.requestFocus();
+            qtAulas.setError(getString(R.string.erropreco));
         }else {
+
+            String nome = nomeMateria.getText().toString();
+            double aulas = Integer.parseInt(qtAulas.getText().toString());
+            double porcentagem = Integer.parseInt(porcFaltas.getText().toString().replace("%", ""));
+
+
 
             double resultado = aulas * (porcentagem / 100);
 
@@ -52,7 +58,7 @@ public class QuantidadeFalta extends AppCompatActivity {
                 valorResultado.setText(" Tarde de mais camarada, talvez no próximo semestre ):");
             }
 
-            String banco = crud.insereDado(nome, Double.toString(aulas), Double.toString(resultado) );
+            String banco = crud.insereDado(nome, Double.toString(aulas),"Faltas totais possiveis: "+ Integer.toString( (int) resultado ) );
 
             Toast.makeText(getApplicationContext(), banco, Toast.LENGTH_LONG).show();
         }

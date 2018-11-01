@@ -31,25 +31,36 @@ public class QuantidadeFaltaRestantes extends AppCompatActivity {
         TextView qtTotalRestante = findViewById(R.id.total);
         TextView nomeMateria = findViewById(R.id.nomeMateria);
 
-        String nome = nomeMateria.getText().toString();
-        int faltas = Integer.parseInt(qtFaltas.getText().toString());
-        double aulas = Integer.parseInt(qtAulas.getText().toString());
-        double porcentagem = Integer.parseInt(porcFaltas.getText().toString().replace("%", ""));
-
-        double resultado = aulas * ( porcentagem / 100 );
-        int faltasRestantes = (int) resultado - faltas;
-
-        if ( faltasRestantes > 0 ){
-            qtTotalRestante.setText( "Você ainda pode gazear " + Integer.toString( faltasRestantes ) + " aulas" );
-        } else if ( faltasRestantes == 0){
-            qtTotalRestante.setText( "Você não pode mais faltar :/");
+        if ( nomeMateria.getText().toString().isEmpty() ) {
+            nomeMateria.requestFocus();
+            nomeMateria.setError(getString(R.string.erropreco));
+        } else if ( qtAulas.getText().toString().isEmpty() ) {
+            qtAulas.requestFocus();
+            qtAulas.setError(getString(R.string.erropreco));
+        } else if ( qtFaltas.getText().toString().isEmpty() ) {
+            qtFaltas.requestFocus();
+            qtFaltas.setError(getString(R.string.erropreco));
         } else {
-            qtTotalRestante.setText( " Tarde de mais camarada, talvez no próximo semestre ):" );
+
+            String nome = nomeMateria.getText().toString();
+            int faltas = Integer.parseInt(qtFaltas.getText().toString());
+            double aulas = Integer.parseInt(qtAulas.getText().toString());
+            double porcentagem = Integer.parseInt(porcFaltas.getText().toString().replace("%", ""));
+
+            double resultado = aulas * (porcentagem / 100);
+            int faltasRestantes = (int) resultado - faltas;
+
+            if (faltasRestantes > 0) {
+                qtTotalRestante.setText("Você ainda pode gazear " + Integer.toString(faltasRestantes) + " aulas");
+            } else if (faltasRestantes == 0) {
+                qtTotalRestante.setText("Você não pode mais faltar :/");
+            } else {
+                qtTotalRestante.setText(" Tarde de mais camarada, talvez no próximo semestre ):");
+            }
+
+            String banco = crud.insereDado(nome, Double.toString(aulas), "Faltas totais possíveis: " + Integer.toString((int) resultado));
+
+            Toast.makeText(getApplicationContext(), banco, Toast.LENGTH_LONG).show();
         }
-
-        String banco = crud.insereDado(nome, Double.toString(aulas), Double.toString(resultado) );
-
-        Toast.makeText(getApplicationContext(), banco, Toast.LENGTH_LONG).show();
-
     }
 }

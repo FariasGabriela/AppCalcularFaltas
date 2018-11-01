@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class HistoricoRepository extends SQLiteOpenHelper {
     private static final String NOME_BANCO = "banco.db";
     public static final String TABELA = "historico";
-    private static final String ID = "_id";
+    public static final String ID = "_id";
     public static final String MATERIA = "materia";
     public static final String QTTOTAL = "qtTotal";
     public static final String RESULTADO = "resultado";
