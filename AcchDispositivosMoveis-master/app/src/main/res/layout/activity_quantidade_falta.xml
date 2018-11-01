@@ -17,6 +17,7 @@
 
     <EditText
         android:id="@+id/qtAulas"
+        android:inputType="number"
         android:layout_gravity="center_vertical|center_horizontal"
         android:layout_width="350dp"
         android:layout_height="50dp" />

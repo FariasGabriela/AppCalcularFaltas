@@ -24,19 +24,22 @@ public class QuantidadeFaltaRestantes extends AppCompatActivity {
         TextView qtFaltas = findViewById(R.id.qtFaltas);
         TextView qtAulas = findViewById(R.id.qtAulas);
         TextView porcFaltas = findViewById(R.id.porcFaltas);
-        TextView valorFinal = findViewById(R.id.resultado);
+        TextView qtTotalRestante = findViewById(R.id.total);
 
         int faltas = Integer.parseInt(qtFaltas.getText().toString());
         double aulas = Integer.parseInt(qtAulas.getText().toString());
         double porcentagem = Integer.parseInt(porcFaltas.getText().toString().replace("%", ""));
-        Log.i("gabriela", " " + faltas+ " " + aulas + " " + porcentagem );
 
         double resultado = aulas * ( porcentagem / 100 );
         int faltasRestantes = (int) resultado - faltas;
 
-        valorFinal.setText( "Quantidade total de falta possível" + Integer.toString( (int) resultado ));
-        valorFinal.setText( "Quantidade de faltas " + Integer.toString( faltasRestantes ) );
-        Log.i("gabriela", " " + resultado+ " " + faltasRestantes );
+        if ( faltasRestantes > 0 ){
+            qtTotalRestante.setText( "Você ainda pode gazear " + Integer.toString( faltasRestantes ) + " aulas" );
+        } else if ( faltasRestantes == 0){
+            qtTotalRestante.setText( "Você não pode mais faltar :/");
+        } else {
+            qtTotalRestante.setText( " Tarde de mais camarada, talvez no próximo semestre ):" );
+        }
 
 
     }

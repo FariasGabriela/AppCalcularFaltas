@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DispositivosMoveisAcch</string>
+    <string name="app_name">Gazeando</string>
     <string name="qtdTtal">Quantidade total de faltas</string>
     <string name="qtdTtalFaltas">Quantidade total de faltas restantes</string>
     <string name="mensagem">Faltas Limites: 5 </string>
@@ -7,4 +7,5 @@
     <string name="resultado">resultado</string>
     <string name="bemvindo"> Bem Vindo(a)</string>
     <string name="porcentagem">25%</string>
+    <string name="horarios">Horários</string>
 </resources>
