@@ -58,7 +58,7 @@ public class QuantidadeFalta extends AppCompatActivity {
                 valorResultado.setText(" Tarde de mais camarada, talvez no próximo semestre ):");
             }
 
-            String banco = crud.insereDado(nome, Double.toString(aulas),"Faltas totais possiveis: "+ Integer.toString( (int) resultado ) );
+            String banco = crud.insereDado(nome, Double.toString(aulas),"Quantidade total de aulas: "+ qtAulas.getText().toString() );
 
             Toast.makeText(getApplicationContext(), banco, Toast.LENGTH_LONG).show();
         }
