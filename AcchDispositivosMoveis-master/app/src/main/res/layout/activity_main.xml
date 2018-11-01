@@ -8,14 +8,13 @@
     android:background="@drawable/backgroundcolor"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginTop="25dp"
-        android:text="@string/bemvindo"
-        android:textAlignment="center"
-        android:textSize="20sp" />
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_margin="15dp"
+        android:src="@drawable/logo" />
 
     <Button
         android:layout_width="270dp"
