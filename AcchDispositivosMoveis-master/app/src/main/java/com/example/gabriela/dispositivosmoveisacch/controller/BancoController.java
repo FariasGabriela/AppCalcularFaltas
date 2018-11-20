@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.gabriela.dispositivosmoveisacch.repository.HistoricoRepository;
 
@@ -35,6 +36,20 @@ public class BancoController {
 
     }
 
+    public Cursor carregaDadoById (int id){
+        Cursor cursor;
+        String [] campos = {banco.ID, banco.MATERIA, banco.RESULTADO};
+        db = banco.getWritableDatabase();
+        String where = banco.ID + " = " + id;
+        cursor = db.query(banco.TABELA, campos, where, null, null, null, null, null);
+        if (cursor != null){
+            cursor.moveToFirst();
+        }
+        db.close();
+
+        return cursor;
+    }
+
     public Cursor carregaDados(){
         Cursor cursor;
         String[] campos =  {banco.ID, banco.MATERIA,banco.RESULTADO};
@@ -46,5 +61,30 @@ public class BancoController {
         }
         db.close();
         return cursor;
+    }
+
+    public void alterarDados( int id, String materia, String resultado){
+        ContentValues valores;
+        String where;
+
+        db = banco.getWritableDatabase();
+
+        where = banco.ID + " = " + id;
+
+        valores = new ContentValues();
+        valores.put(banco.MATERIA, materia );
+        valores.put(banco.RESULTADO, resultado);
+
+        db.update(banco.TABELA, valores, where, null);
+        db.close();
+
+    }
+
+    public void deleteDados(int id){
+        String where = banco.ID + " = " + id;
+        db = banco.getWritableDatabase();
+        long teste = db.delete(banco.TABELA, where, null);
+        Log.i("TESTETESTE", "" + teste);
+        db.close();
     }
 }

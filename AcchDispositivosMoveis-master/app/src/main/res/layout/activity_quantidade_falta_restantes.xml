@@ -9,6 +9,7 @@
     tools:context=".QuantidadeFaltaRestantes">
 
     <TextView
+        android:background="@color/white"
         android:layout_gravity="center_vertical|center_horizontal"
         android:text="Quantidade de aulas"
         android:layout_width="340dp"
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
+        android:background="@color/white"
         android:id="@+id/qtAulas"
         android:layout_width="340dp"
         android:layout_height="50dp"
@@ -23,6 +25,8 @@
         android:inputType="number" />
 
     <TextView
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
         android:layout_gravity="center_vertical|center_horizontal"
         android:text="Porcentagem de faltas"
         android:layout_width="340dp"
@@ -30,13 +34,16 @@
 
     <EditText
         android:id="@+id/porcFaltas"
-        android:text="@string/porcentagem"
-        android:enabled="false"
-        android:layout_gravity="center_vertical|center_horizontal"
         android:layout_width="340dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:background="@color/white"
+        android:enabled="false"
+        android:text="@string/porcentagem" />
 
     <TextView
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
         android:text="Quantidade de faltas atuais"
         android:layout_gravity="center_vertical|center_horizontal"
         android:layout_width="340dp"
@@ -45,8 +52,9 @@
     <EditText
         android:id="@+id/qtFaltas"
         android:layout_width="340dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_gravity="center_vertical|center_horizontal"
+        android:background="@color/white"
         android:inputType="number" />
 
     <TextView

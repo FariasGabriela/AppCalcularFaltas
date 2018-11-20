@@ -12,4 +12,6 @@
     <string name="porcentagem_faltas">Porcentagem de faltas</string>
     <string name="nome_da_materia">Nome da materia</string>
     <string name="erropreco">Campo Obrigatório</string>
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
 </resources>

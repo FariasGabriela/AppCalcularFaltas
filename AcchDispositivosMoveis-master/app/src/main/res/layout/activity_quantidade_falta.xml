@@ -9,6 +9,7 @@
     tools:context=".QuantidadeFalta">
 
     <TextView
+        android:background="@color/white"
         android:layout_marginTop="40dp"
         android:text="@string/nome_da_materia"
         android:layout_width="350dp"
@@ -18,17 +19,21 @@
 
     <EditText
         android:id="@+id/nomeMateria"
-        android:layout_gravity="center_vertical|center_horizontal"
         android:layout_width="350dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:background="@color/white" />
 
     <TextView
+        android:layout_marginTop="5dp"
         android:text="@string/qt_aulas"
+        android:background="@color/white"
         android:layout_gravity="center_vertical|center_horizontal"
         android:layout_width="350dp"
         android:layout_height="wrap_content" />
 
     <EditText
+        android:background="@color/white"
         android:id="@+id/qtAulas"
         android:inputType="number"
         android:layout_gravity="center_vertical|center_horizontal"
@@ -36,6 +41,8 @@
         android:layout_height="50dp" />
 
     <TextView
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
         android:text="@string/porcentagem_faltas"
         android:layout_width="350dp"
         android:inputType="number"
@@ -44,11 +51,12 @@
 
     <EditText
         android:id="@+id/porcFaltas"
-        android:enabled="false"
-        android:text="@string/porcentagem"
-        android:layout_gravity="center_vertical|center_horizontal"
         android:layout_width="350dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:background="@color/white"
+        android:enabled="false"
+        android:text="@string/porcentagem" />
 
     <TextView
         android:id="@+id/resultado"
