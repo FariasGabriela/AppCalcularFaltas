@@ -20,6 +20,7 @@ public class QuantidadeFalta extends AppCompatActivity {
     EditText editQtAulas;
     EditText editResultado;
     EditText editMateria;
+    EditText editHorario;
     Cursor cursor;
     private HistoricoRepository banco;
     Bundle bundle;
@@ -38,10 +39,13 @@ public class QuantidadeFalta extends AppCompatActivity {
 
             editQtAulas = (EditText) findViewById(R.id.qtAulas);
             editMateria = (EditText) findViewById(R.id.nomeMateria);
+            editHorario = (EditText) findViewById(R.id.horario);
 
             cursor = crud.carregaDadoById(item);
             editQtAulas.setText(cursor.getString(cursor.getColumnIndexOrThrow(banco.RESULTADO)));
             editMateria.setText(cursor.getString(cursor.getColumnIndexOrThrow(banco.MATERIA)));
+            editHorario.setText(cursor.getString(cursor.getColumnIndexOrThrow(banco.HORARIO)));
+
 
         }
 
@@ -59,9 +63,8 @@ public class QuantidadeFalta extends AppCompatActivity {
     public void onClickCalcular(View view) {
         BancoController crud = new BancoController(getBaseContext());
         TextView qtAulas = findViewById(R.id.qtAulas);
-        TextView porcFaltas = findViewById(R.id.porcFaltas);
-        TextView valorResultado = findViewById(R.id.resultado);
         TextView nomeMateria = findViewById(R.id.nomeMateria);
+        TextView horarioMateria = findViewById(R.id.horario);
 
         if ( nomeMateria.getText().toString().isEmpty() ) {
             nomeMateria.requestFocus();
@@ -70,31 +73,26 @@ public class QuantidadeFalta extends AppCompatActivity {
             qtAulas.requestFocus();
             qtAulas.setError(getString(R.string.erropreco));
         } else if ( bundle != null ) {
-            Toast.makeText( getApplicationContext(), "atualizado", Toast.LENGTH_LONG ).show();
+            Toast.makeText( getApplicationContext(), "Atualizado", Toast.LENGTH_LONG ).show();
             String nome = nomeMateria.getText().toString();
-            double aulas =  Integer.parseInt(qtAulas.getText().toString());
-            crud.alterarDados(item, nome, Double.toString(aulas));
+            int aulas =  Integer.parseInt(qtAulas.getText().toString());
+            String horario = horarioMateria.getText().toString();
+            crud.alterarDados(item, nome, Integer.toString(aulas), horario);
         }else {
 
             String nome = nomeMateria.getText().toString();
-            double aulas = Integer.parseInt(qtAulas.getText().toString());
-            double porcentagem = Integer.parseInt(porcFaltas.getText().toString().replace("%", ""));
-
+            Integer aulas = Integer.parseInt(qtAulas.getText().toString());
+            double porcentagem = 25;
+            String horario = horarioMateria.getText().toString();
 
 
             double resultado = aulas * (porcentagem / 100);
 
-            if (resultado > 0) {
-                valorResultado.setText( "Você pode gazear " + Integer.toString( (int) resultado ) + " aulas" );
-            } else if (resultado == 0) {
-                valorResultado.setText("Você não pode mais faltar :/");
-            } else {
-                valorResultado.setText(" Tarde de mais camarada, talvez no próximo semestre ):");
-            }
+            Toast.makeText(getApplicationContext(),  "Você pode gazear " + Integer.toString( (int) resultado ) + " aulas"  , Toast.LENGTH_LONG).show();
 
-            String banco = crud.insereDado(nome, Double.toString(aulas), qtAulas.getText().toString() );
+            String banco = crud.insereDado(nome, Integer.toString(aulas), qtAulas.getText().toString(), horario );
 
-            Toast.makeText(getApplicationContext(), banco, Toast.LENGTH_LONG).show();
+
         }
 
 

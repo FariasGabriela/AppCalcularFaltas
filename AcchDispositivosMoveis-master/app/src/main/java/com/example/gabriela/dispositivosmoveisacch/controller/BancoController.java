@@ -16,7 +16,7 @@ public class BancoController {
         banco = new HistoricoRepository(context);
     }
 
-    public String insereDado(String materia, String qtTotal, String valorFinal){
+    public String insereDado(String materia, String qtTotal, String valorFinal, String horario){
         ContentValues valores;
         long resultado;
 
@@ -25,6 +25,7 @@ public class BancoController {
         valores.put(HistoricoRepository.MATERIA, materia);
         valores.put(HistoricoRepository.QTTOTAL, qtTotal);
         valores.put(HistoricoRepository.RESULTADO, valorFinal);
+        valores.put(HistoricoRepository.HORARIO, horario);
 
         resultado = db.insert(HistoricoRepository.TABELA, null, valores);
         db.close();
@@ -38,7 +39,7 @@ public class BancoController {
 
     public Cursor carregaDadoById (int id){
         Cursor cursor;
-        String [] campos = {banco.ID, banco.MATERIA, banco.RESULTADO};
+        String [] campos = {banco.ID, banco.MATERIA, banco.RESULTADO, banco.HORARIO};
         db = banco.getWritableDatabase();
         String where = banco.ID + " = " + id;
         cursor = db.query(banco.TABELA, campos, where, null, null, null, null, null);
@@ -52,7 +53,7 @@ public class BancoController {
 
     public Cursor carregaDados(){
         Cursor cursor;
-        String[] campos =  {banco.ID, banco.MATERIA,banco.RESULTADO};
+        String[] campos =  {banco.ID, banco.MATERIA,banco.RESULTADO, banco.HORARIO};
         db = banco.getReadableDatabase();
         cursor = db.query(banco.TABELA, campos, null, null, null, null, null, null);
 
@@ -63,7 +64,7 @@ public class BancoController {
         return cursor;
     }
 
-    public void alterarDados( int id, String materia, String resultado){
+    public void alterarDados( int id, String materia, String resultado, String horario){
         ContentValues valores;
         String where;
 
@@ -74,6 +75,7 @@ public class BancoController {
         valores = new ContentValues();
         valores.put(banco.MATERIA, materia );
         valores.put(banco.RESULTADO, resultado);
+        valores.put(banco.HORARIO, horario);
 
         db.update(banco.TABELA, valores, where, null);
         db.close();

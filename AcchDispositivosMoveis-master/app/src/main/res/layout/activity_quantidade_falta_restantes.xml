@@ -8,54 +8,73 @@
     android:background="@drawable/backgroundcolor"
     tools:context=".QuantidadeFaltaRestantes">
 
-    <TextView
-        android:background="@color/white"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Quantidade de aulas"
-        android:layout_width="340dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_height="wrap_content" />
+        android:background="@drawable/background"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <TextView
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="Porcentagem de faltas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <EditText
-        android:background="@color/white"
-        android:id="@+id/qtAulas"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:inputType="number" />
+        <EditText
+            android:id="@+id/porcFaltas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:background="@color/white"
+            android:enabled="false"
+            android:text="@string/porcentagem" />
+    </LinearLayout>
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:background="@color/white"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Porcentagem de faltas"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content" />
+        android:background="@drawable/background"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <EditText
-        android:id="@+id/porcFaltas"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:background="@color/white"
-        android:enabled="false"
-        android:text="@string/porcentagem" />
+        <TextView
+            android:background="@color/white"
+            android:text="Quantidade de aulas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <TextView
+        <EditText
+            android:background="@color/white"
+            android:id="@+id/qtAulas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:background="@color/white"
-        android:text="Quantidade de faltas atuais"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content" />
+        android:background="@drawable/background"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <EditText
-        android:id="@+id/qtFaltas"
-        android:layout_width="340dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:background="@color/white"
-        android:inputType="number" />
+        <TextView
+            android:text="Quantidade de faltas atuais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/qtFaltas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:inputType="number" />
+
+    </LinearLayout>
 
     <TextView
         android:text=""

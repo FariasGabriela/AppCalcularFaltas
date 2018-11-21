@@ -50,8 +50,8 @@ public class HistoricoActivity extends AppCompatActivity implements DialogItemHi
 
         cursor = new BancoController(getBaseContext()).carregaDados();
 
-        String[] nomeCampos = new String[] {HistoricoRepository.MATERIA, HistoricoRepository.RESULTADO};
-        int[] idViews = new int[] {R.id.nome_materia, R.id.quantidadeFaltas};
+        String[] nomeCampos = new String[] {HistoricoRepository.MATERIA, HistoricoRepository.RESULTADO, HistoricoRepository.HORARIO};
+        int[] idViews = new int[] {R.id.nome_materia, R.id.quantidadeFaltas, R.id.horario};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
                 R.layout.activity_item_historico,cursor,nomeCampos,idViews, 0);

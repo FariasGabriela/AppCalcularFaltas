@@ -11,6 +11,7 @@ public class HistoricoRepository extends SQLiteOpenHelper {
     public static final String MATERIA = "materia";
     public static final String QTTOTAL = "qtTotal";
     public static final String RESULTADO = "resultado";
+    public static final String HORARIO = "horario";
     private static final int VERSAO = 1;
 
     public HistoricoRepository(Context context) {
@@ -23,7 +24,8 @@ public class HistoricoRepository extends SQLiteOpenHelper {
                 + ID + " integer primary key autoincrement,"
                 + MATERIA + " text,"
                 + QTTOTAL + " text,"
-                + RESULTADO + " text"
+                + RESULTADO + " text,"
+                + HORARIO + " text"
                 +")";
         db.execSQL(sql);
     }
