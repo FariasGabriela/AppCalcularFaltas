@@ -41,15 +41,15 @@ public class HistoricoActivity extends AppCompatActivity implements DialogItemHi
 
             }
         });
-
+        
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        cursor = new BancoController(getBaseContext()).carregaDados();
 
+        cursor = new BancoController(getBaseContext()).carregaDados();
         String[] nomeCampos = new String[] {HistoricoRepository.MATERIA, HistoricoRepository.RESULTADO, HistoricoRepository.HORARIO};
         int[] idViews = new int[] {R.id.nome_materia, R.id.quantidadeFaltas, R.id.horario};
 

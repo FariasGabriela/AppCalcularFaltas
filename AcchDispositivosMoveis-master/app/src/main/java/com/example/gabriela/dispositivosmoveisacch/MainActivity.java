@@ -25,10 +25,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickHorarios(View view) {
-        Intent intent = new Intent(MainActivity.this, MateriasActivity.class);
-        startActivity(intent);
-    }
 
     public void onClickHistorico(View view) {
         Intent intent = new Intent(MainActivity.this, HistoricoActivity.class);

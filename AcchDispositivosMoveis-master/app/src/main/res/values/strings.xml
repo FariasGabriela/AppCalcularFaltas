@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Gazeando</string>
-    <string name="qtdTtal">Gravar quantidade total de faltas</string>
+    <string name="qtdTtal">Cadastrar Matéria</string>
     <string name="qtdTtalFaltas">Quantidade total de faltas restantes</string>
     <string name="mensagem">Faltas Limites: 5 </string>
     <string name="voltar">Voltar</string>
