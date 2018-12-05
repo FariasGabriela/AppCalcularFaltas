@@ -41,7 +41,7 @@ public class HistoricoActivity extends AppCompatActivity implements DialogItemHi
 
             }
         });
-        
+
     }
 
     @Override
